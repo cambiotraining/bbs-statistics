@@ -1,0 +1,158 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Overview\nThese materials include background information as well as practicals for the Statistics section of the NST Part II Biological and Biomedical Sciences paper at the University of Cambridge.",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Welcome",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#citation-authors",
+    "href": "index.html#citation-authors",
+    "title": "Overview",
+    "section": "Citation & Authors",
+    "text": "Citation & Authors\nPlease cite these materials if:\n\nYou adapted or used any of them in your own teaching.\nThese materials were useful for your research work. For example, you can cite us in the methods section of your paper: “We carried our analyses based on the recommendations in YourReferenceHere”.\n\n\nYou can cite these materials as:\n\nHodgson, V. (2026). NST Part II BBS Statistics Materials. https://cambiotraining.github.io/quarto-course-template/\n\nOr in BibTeX format:\n@misc{YourReferenceHere,\n  author = {Hodgson, Vicki},\n  month = {8},\n  title = {NST Part II BBS Statistics Materials},\n  url = {https://cambiotraining.github.io/quarto-course-template/},\n  year = {2026}\n}\nAbout the authors:\nVicki Hodgson  \nAffiliation: Cambridge Centre for Research Informatics Training Roles: writing - original draft",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Welcome",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Data & Setup",
+    "section": "",
+    "text": "Data\nThe data and any additional resources (e.g., scripts) used in these materials is provided as a zip file. Download and unzip the folder to your Desktop to follow along with the materials.\n&lt;a href=““https://github.com/cambiotraining/bbs-statistics/tree/main/materials/data_scripts/data_scripts.zip”“&gt;  Download",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Welcome",
+      "Data & Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software",
+    "href": "setup.html#software",
+    "title": "Data & Setup",
+    "section": "Software",
+    "text": "Software\nIn this course, we will use the programming language R. R is specialised for statistics, and some of the packages we use here don’t have satisfactory analogues in other languages (yet!).\nBy default, we’ll assume that you’re using RStudio as your integrated development environment. However, you’re welcome to use VSCode, Positron or a similar alternative if you prefer.\n\nR and RStudio\n\n\nWindows\nDownload and install all these using default options:\n\nR\nRTools\nRStudio\n\n\n\nMac OS\nDownload and install all these using default options:\n\nR\nRStudio\n\n\n\nLinux\n\nGo to the R installation folder and look at the instructions for your distribution.\nDownload the RStudio installer for your distribution and install it using your package manager.",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Welcome",
+      "Data & Setup"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html",
+    "href": "materials/01-linear-models.html",
+    "title": "1  Introducing linear models",
+    "section": "",
+    "text": "1.1 What is a statistical model?\nYou will need the following packages for this chapter.\nThe formal definition of a statistical model is a mathematical equation that describes the relationship between variables.\nThe equation will typically have some inbuilt “structure” or assumptions that guide\nDepending on our background, you might prefer to think about it as:",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#what-is-a-statistical-model",
+    "href": "materials/01-linear-models.html#what-is-a-statistical-model",
+    "title": "1  Introducing linear models",
+    "section": "",
+    "text": "a set of coefficients or weights\na linear combination of predictors\na “recipe”\na rule that describes a set of predictions\n\n\n1.1.1 Why do we need a model?\nUltimately, we are attempting to make an inference about the population of interest, based on a subset of that population (i.e., the sample or dataset).\nThe idea is that if there is a real relationship between variables - a true “signal” - in our population, then it will hopefully be carried over into our dataset, where we can then detect and quantify it.\nHowever, we recognise that because our dataset is a random sample of our population, and randomness always means a bit of noise, the real relationship will be somewhat obscured by random variation.\nFitting a statistical model is our way of attempting to isolate that signal amongst the noise in the dataset. It ignores the tiny, messy details to give a clear rule on which to base our inferences and predictions.\n\n\n1.1.2 Components of a model\nAny given statistical model will have:\n\nData: The actual numbers or observations that are collected.\nVariables: The constructs that are measured, e.g., height, which vary meaningfully or systematically in the experiment or study.\n\nResponse variable: The outcome of interest.\nPredictor variable(s): The variables that are being deliberately varied in the study, in order to assess the affect on the response variable.\n\nParameters: Numbers (also known as weights or coefficients) associated with the predictor variables, which are tuned (estimated) during model fitting so that the equation fits the data.\nFitted/predicted values: The predicted values of the response variable according to the model equation, when inputting the observed values of the predictor variables for each data point.\nResiduals: The errors, or distance, between the value of the response variable for the actual observed data points vs their predicted values according to the model. In other words, residuals are the “noise” in our random dataset.\nAssumptions: Features or rules about the behaviour of the data, which must be met for the model to be valid and interpretable.\n\n\n\n\n\n\n\n\nAn example model (line of best fit, blue) with the model equation and parameters (orange)\n\n\n\n\n\n\n\n\n\nPredicted values (blue crosses) versus actual values (grey dots), with the residuals (vertical black lines) making up the difference",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#what-is-a-linear-model-specifically",
+    "href": "materials/01-linear-models.html#what-is-a-linear-model-specifically",
+    "title": "1  Introducing linear models",
+    "section": "1.2 What is a linear model, specifically?",
+    "text": "1.2 What is a linear model, specifically?\nThe linear model is, among all statistical models, perhaps the most structured and specific of all. In other words, it makes more assumptions and applies in a more limited subset of cases than perhaps any other type of model.\nThis raises the obvious question of why we bother to learn them, but\n\nlinear models make for a really clear starting point, because they’re so well-defined and relatively simple, and\nyou’ve probably already come across linear models before even if you don’t realise it.\n\n\n1.2.1 The linear model equation\nThe mathematical form of the equation for any linear model will always be written in this form (varying based on the number of predictors):\n\\[y = \\beta_0 + \\beta_1x_1 + ... + \\beta_nx_n + \\epsilon\\]\nThe components:\n\n\\(y\\) is the response variable. It must be continuous.\n\\(x_n\\) is a predictor variable. These can take any form - categorical, continuous, transformed residuals, even interactions. Typically, we’d write a equation with an interaction like this: \\(\\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_1x_2\\)\nThe \\(\\beta\\) coefficients represent the “weighting” of their respective predictor variables; note that each coefficient is multiplied by its predictor variable, and then the resulting products are added together. This is typically referred to as a “linear combination” of predictors, or the “linear predictor”.\nFinally, \\(\\epsilon\\) represents our residuals. Since \\(y\\) represents our actual dataset, we need the error component there to capture the fact that our linear predictor doesn’t produce predicted values that match the true data points exactly.\n\n\n\n1.2.2 Re-framing common statistical tests\nMost of the “introductory-level” statistical tests that are taught to life sciences students are all just special cases of the linear model.\nThe only difference between these tests is the nature of the predictor variable(s) (categorical or continuous) and how many of each you have. Each predictor variable will get its own beta coefficient.\n\n\n\n\n\n\n\n\nCommon statistical test\n“Classical” explanation\nFramed as a linear model\n\n\n\n\nT-test (one-sample, paired)\nComparing a set of numbers against a known/theorised mean\nSimplest form of a linear model with no predictors at all\n\n\nT-test (two-sample)\nComparing the difference between two independent means\nSingle categorical predictor (with two levels/groups)\n\n\nOne-way ANOVA\nComparing the difference between 3+ independent means\nSingle categorical predictor (with 3+ levels/groups)\n\n\nTwo-way ANOVA\nComparing the difference between means across multiple subgroups\nTwo categorical predictors\n\n\nSimple linear regression\nExamining the slope of a line of best fit\nSingle continuous predictor\n\n\nGrouped linear regression\nExamining the slopes of 2+ lines of best fit\nOne categorical + one continuous predictor (plus optional interaction)\n\n\nMore complex models\n\nAny number of categorical or continuous predictors\n\n\n\nFor the vast majority of these tests (with the exception of the t-tests), we calculate an F-statistic for the purposes of then extracting a p-value, if we wish to perform hypothesis testing. The F- or t-statistic in a linear model is effectively a measure of the strength of the signal to noise ratio.",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#assumptions",
+    "href": "materials/01-linear-models.html#assumptions",
+    "title": "1  Introducing linear models",
+    "section": "1.3 Assumptions",
+    "text": "1.3 Assumptions\nAll statistical models make assumptions about the nature of the data and/or the relationship between the variables. Linear models, in particular, make a lot of these assumptions.\nBefore you begin interpreting and reporting any statistical test - ideally before you get to the point of extracting p-values - you should check these assumptions.\n\n1.3.1 Summary of linear model assumptions\n\n\n\n\n\n\n\n\nCheck\nFormal assumption?\nMethods for assessing\n\n\n\n\nContinuous response\n✔\nConsidering the experimental design\n\n\nIndependence\n✔\nConsidering the experimental design\n\n\nLinearity\n✔\nResidual (vs fitted) plot\n\n\nNormality of residuals\n✔\nNormal Q-Q plot\nShapiro-Wilk test\n\n\nHomogeneity of variance in the residuals\n✔\nLocation-scale plot\nBarlett’s test, Levene’s test\n\n\nLack of overly influential points\n✘\nCook’s distance plot\n\n\n\nWe’ll come on to the continuous response and independence assumptions when we discuss generalised linear models and mixed effects models.\nFor assessing the three remaining assumptions, along with determining whether there are any influential points, the most efficient approach is a panel of diagnostic plots, described in more detail in the drop-down boxes below.\nTo get some additional practice interpreting the diagnostic plots, you can use the Shiny app that you downloaded along with the data files for this course. You should be able to launch that app directly with the following code:\n\nshiny::runApp(\"data/diagnostics-shiny.R\")\n\n\n\n\n\n\n\nNoteLinearity\n\n\n\n\n\nWhen we fit a linear model, we are assuming a linear relationship between the response variable and the predictor variable (or, in more complex models, between the response variable and the set of predictor variables).\nThis assumption is typically assessed with a residuals plot (also known as a residuals vs fitted plot).\nThere should be no clear pattern in the residuals, and if you add the smoother red trend line, it should be approximately horizontal around 0:\n\n\n\n\n\n\n\n\n\nIf you see any actual pattern in this plot - such as the examples shown below - that indicates a lack of linearity.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis one is more subtle (but underneath the hood, I can confirm that the assumption is not met). Unfortunately, these plots can often look a little “borderline”, especially when the sample size is small.\n\n\n\n\n\n\n\n\n\nNote that the following is not a concern - this particular type of pattern simply indicates that your model only contains categorical predictors.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteNormality of residuals\n\n\n\n\n\nThe\n\n\n\n\n\n\n\n\n\nNoteEquality of variance\n\n\n\n\n\nLike normality, this applies to the residuals\nAlso known as homoscedasticity\nNote: the issue is often also observed in the residuals vs fitted plot, so I’m going to show both.\n\n\n\n\n\n\n\n\n\nNoteLack of influential points\n\n\n\n\n\nNot strictly a formal assumption",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#fitting-a-linear-model",
+    "href": "materials/01-linear-models.html#fitting-a-linear-model",
+    "title": "1  Introducing linear models",
+    "section": "1.4 Fitting a linear model",
+    "text": "1.4 Fitting a linear model\nIn R, the easiest way to fit a linear model is using the lm function.\nTo demo it briefly, we’ll test it out on the inbuilt iris dataset.\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nWe use the\n\nlm_iris &lt;- lm(Sepal.Length ~ Sepal.Width + Species, data = iris)\n\nsummary(lm_iris)\n\n\nCall:\nlm(formula = Sepal.Length ~ Sepal.Width + Species, data = iris)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.30711 -0.25713 -0.05325  0.19542  1.41253 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)         2.2514     0.3698   6.089 9.57e-09 ***\nSepal.Width         0.8036     0.1063   7.557 4.19e-12 ***\nSpeciesversicolor   1.4587     0.1121  13.012  &lt; 2e-16 ***\nSpeciesvirginica    1.9468     0.1000  19.465  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.438 on 146 degrees of freedom\nMultiple R-squared:  0.7259,    Adjusted R-squared:  0.7203 \nF-statistic: 128.9 on 3 and 146 DF,  p-value: &lt; 2.2e-16",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#significance-testing",
+    "href": "materials/01-linear-models.html#significance-testing",
+    "title": "1  Introducing linear models",
+    "section": "1.5 Significance testing",
+    "text": "1.5 Significance testing\nA model is just a description of a trend, or the extraction of the signal. It is not, in itself, a test of significance.\nWe can go a step further with a model, by comparing it against a null hypothesis (i.e., a null model). In other words, we ask, “how likely is it that I would observe data like these, or more extreme, if the population I sampled from has nothing going on between the variables?”\nThis gives us a probability, also known as a p-value.",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#model-comparison",
+    "href": "materials/01-linear-models.html#model-comparison",
+    "title": "1  Introducing linear models",
+    "section": "1.6 Model comparison",
+    "text": "1.6 Model comparison",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "materials/01-linear-models.html#summary",
+    "href": "materials/01-linear-models.html#summary",
+    "title": "1  Introducing linear models",
+    "section": "1.7 Summary",
+    "text": "1.7 Summary\n\n\n\n\n\n\nNoteKey Points\n\n\n\n\nLast section of the page is a bulleted summary of the key points",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Linear models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducing linear models</span>"
+    ]
+  },
+  {
+    "objectID": "versions.html",
+    "href": "versions.html",
+    "title": "Archived Versions",
+    "section": "",
+    "text": "Select a version to view the course materials as they were at that time.\nEach version represents a snapshot of the course materials at a specific point in time. This allows participants to access the exact version of the materials they used during their course, even as the content continues to evolve.\nThe latest version always contains the most up-to-date content and improvements.",
+    "crumbs": [
+      "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}",
+      "Appendices",
+      "Archived Versions"
+    ]
+  }
+]

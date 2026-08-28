@@ -1,0 +1,17 @@
+book:
+  chapters:
+    - part: "Linear models"
+      chapters:
+        - materials/01-linear-models.qmd
+    #- part: "Generalised linear models"
+      #chapters:
+        #- materials/00-template.md
+    #- part: "Mixed effects models"
+      #chapters:
+        #- materials/00-template.md
+    #- part: "Meta-analysis"
+      #chapters:        
+        #- materials/meta-analysis.md
+    #- part: "Survival analysis"
+      #chapters:
+        #- materials/00-template.md

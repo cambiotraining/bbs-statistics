@@ -1,0 +1,26 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+# Note: we use the author alias to record author contributions
+# This is a known limitation of CFF files: https://github.com/citation-file-format/citation-file-format/issues/112
+
+cff-version: 1.2.0
+title: NST Part II BBS Statistics Materials
+message: >-
+  You may cite these materials using the metadata in this
+  file. Please cite our materials if you publish materials
+  derived from these, run a workshop using them, or use
+  the information in your own work.
+type: dataset
+authors:
+  - given-names: Vicki
+    family-names: Hodgson
+    affiliation: Cambridge Centre for Research Informatics Training
+    website: 'https://bioinfotraining.bio.cam.ac.uk/staff/vicki-hodgson-phd'
+    orcid: 'https://orcid.org/0000-0001-5619-2118'
+    alias: 'writing - original draft'
+repository-code: 'https://github.com/cambiotraining/quarto-course-template'
+url: 'https://cambiotraining.github.io/quarto-course-template/'
+license: CC-BY-4.0
+commit: 3c8234e82c7315cfb4d869d9635433bf62baf17f
+date-released: '2026-08-26'

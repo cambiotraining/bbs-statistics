@@ -1,11 +1,9 @@
 ---
 date: today
-pagetitle: "Overview"
+pagetitle: "Introduction & Overview"
 ---
 
-# Course Development Guidelines {.unnumbered}
-
-## Overview
+# Overview {.unnumbered}
 
 These materials include background information as well as practicals for the Statistics section of the NST Part II Biological and Biomedical Sciences paper at the University of Cambridge.
 
@@ -47,11 +45,3 @@ If you think you should be added as an author, please get in touch with us.
 -->
 
 {{< citation CITATION.cff >}}
-
-
-## Acknowledgements
-
-<!-- if there are no acknowledgements we can delete this section -->
-
-- List any other sources of materials that were used.
-- Or other people that may have advised during the material development (but are not authors).

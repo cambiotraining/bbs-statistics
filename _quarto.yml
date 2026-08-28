@@ -44,7 +44,7 @@ book:
   page-navigation: true
   navbar:
     pinned: true
-    title: "Course Development Guidelines"
+    title: "BBS Statistics"
     logo: "_extensions/cambiotraining/crit-format/img/university_crest_reversed.png"
     right:
       - text: "{{< iconify fa6-brands github size=lg title='CRIT GitHub' >}}"

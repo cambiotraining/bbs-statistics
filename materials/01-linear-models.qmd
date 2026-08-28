@@ -1,14 +1,6 @@
 ---
-title: Background
+title: Introducing linear models
 ---
-
-```{r}
-#| message: false
-#| warning: false
-library(tidyverse)
-library(rstatix)
-library(ggResidpanel)
-```
 
 ::: callout-note
 #### Learning Objectives
@@ -19,6 +11,33 @@ library(ggResidpanel)
   - Any number of categorical or continuous predictor variables
 - To understand the assumptions of a linear model
 - To understand how to evaluate and interpret the output of a linear model
+:::
+
+You will need the following packages for this chapter.
+
+::: panel-tabset
+## Install
+
+If you are using these packages for the first time, remember to install them first. Otherwise, you can skip this step.
+
+```{r, install required packages}
+#| eval: false
+install.packages(c("tidyverse",
+                 "rstatix",
+                 "ggResidpanel"))
+```
+
+## Load  {.active}
+
+```{r, load required packages}
+#| message: false
+#| warning: false
+library(tidyverse)
+library(rstatix)
+library(ggResidpanel)
+```
+
+If you receive an error `there is no package called [package]` then this means you need to install the package first. Click on the `install` tab to see how.
 :::
 
 ## What is a statistical model?
@@ -64,9 +83,9 @@ Any given statistical model will have:
 
 - **Assumptions:** Features or rules about the behaviour of the data, which must be met for the model to be valid and interpretable.
 
-![An example model (line of best fit, blue) with the model equation and parameters (orange)](images/cs3-scatterplot-betas.png){width="1500"}
+![An example model (line of best fit, blue) with the model equation and parameters (orange)](images/cs3-scatterplot-betas.png){fig-align="center" width="60%"}
 
-![Predicted values (blue crosses) versus actual values (grey dots), with the residuals (vertical black lines) making up the difference](images/cs3-measured-predicted.png)
+![Predicted values (blue crosses) versus actual values (grey dots), with the residuals (vertical black lines) making up the difference](images/cs3-measured-predicted.png){fig-align="center" width="60%"}
 
 ## What is a **linear** model, specifically?
 
@@ -80,10 +99,9 @@ This raises the obvious question of why we bother to learn them, but
 
 ### The linear model equation
 
-Will always be written in this form:
+The mathematical form of the equation for any linear model will always be written in this form (varying based on the number of predictors):
 
-$$y = \beta_0 + \beta_1x_1 + ... + \beta_nx_n + \epsilon
-$$$$y = \beta_0 + \beta_1x_1 + ... + \beta_nx_n + \epsilon$$
+$$y = \beta_0 + \beta_1x_1 + ... + \beta_nx_n + \epsilon$$
 
 The components:
 
@@ -127,27 +145,27 @@ All statistical models make assumptions about the nature of the data and/or the 
 
 Before you begin interpreting and reporting any statistical test - ideally *before* you get to the point of extracting p-values - you should check these assumptions.
 
-### Summary of linear model assumptions 
+### Summary of linear model assumptions
 
-+------------------------------------------+--------------------+-----------------------------------------------+
-| Check                                    | Formal assumption? | Methods for assessing                         |
-+==========================================+====================+===============================================+
-| Continuous response                      | ✔                  | Considering the experimental design           |
-+------------------------------------------+--------------------+-----------------------------------------------+
-| Independence                             | ✔                  | Considering the experimental design           |
-+------------------------------------------+--------------------+-----------------------------------------------+
-| Linearity                                | ✔                  | Residual (vs fitted) plot                     |
-+------------------------------------------+--------------------+-----------------------------------------------+
-| Normality of residuals                   | ✔                  | Normal Q-Q plot                               |
-|                                          |                    |                                               |
-|                                          |                    | Shapiro-Wilk test                             |
-+------------------------------------------+--------------------+-----------------------------------------------+
-| Homogeneity of variance in the residuals | ✔                  | Location-scale plot                           |
-|                                          |                    |                                               |
-|                                          |                    | Barlett's test, Levene's test                 |
-+------------------------------------------+--------------------+-----------------------------------------------+
-| Lack of overly influential points        | ✘                  | Cook's distance plot                          |
-+------------------------------------------+--------------------+-----------------------------------------------+
++------------------------------------------+--------------------+-------------------------------------+
+| Check                                    | Formal assumption? | Methods for assessing               |
++==========================================+====================+=====================================+
+| Continuous response                      | ✔                  | Considering the experimental design |
++------------------------------------------+--------------------+-------------------------------------+
+| Independence                             | ✔                  | Considering the experimental design |
++------------------------------------------+--------------------+-------------------------------------+
+| Linearity                                | ✔                  | Residual (vs fitted) plot           |
++------------------------------------------+--------------------+-------------------------------------+
+| Normality of residuals                   | ✔                  | Normal Q-Q plot                     |
+|                                          |                    |                                     |
+|                                          |                    | Shapiro-Wilk test                   |
++------------------------------------------+--------------------+-------------------------------------+
+| Homogeneity of variance in the residuals | ✔                  | Location-scale plot                 |
+|                                          |                    |                                     |
+|                                          |                    | Barlett's test, Levene's test       |
++------------------------------------------+--------------------+-------------------------------------+
+| Lack of overly influential points        | ✘                  | Cook's distance plot                |
++------------------------------------------+--------------------+-------------------------------------+
 
 We'll come on to the continuous response and independence assumptions when we discuss generalised linear models and mixed effects models.
 
@@ -155,7 +173,9 @@ For assessing the three remaining assumptions, along with determining whether th
 
 To get some additional practice interpreting the diagnostic plots, you can use the Shiny app that you downloaded along with the data files for this course. You should be able to launch that app directly with the following code:
 
-```{r} shiny::runApp("data/diagnostics-shiny.R")}
+```{r, run diagnostic-plots shiny app}
+#| eval: false
+shiny::runApp("data/diagnostics-shiny.R")
 ```
 
 ::: {.callout-note collapse="true"}
@@ -167,7 +187,7 @@ This assumption is typically assessed with a residuals plot (also known as a res
 
 There should be no clear pattern in the residuals, and if you add the smoother red trend line, it should be *approximately* horizontal around 0:
 
-```{r}
+```{r, residual plot good}
 #| echo: false
 #| message: false
 set.seed(2)
@@ -180,7 +200,7 @@ resid_panel(lm_xydat, plots = c("resid"), smoother=TRUE)
 
 If you see any actual pattern in this plot - such as the examples shown below - that indicates a lack of linearity.
 
-```{r}
+```{r, residual plot u-shape}
 #| echo: false
 #| message: false
 set.seed(2)
@@ -191,7 +211,7 @@ lm_xydat <- lm(yvar ~ xvar, xydat)
 resid_panel(lm_xydat, plots = c("resid"), smoother=TRUE)
 ```
 
-```{r}
+```{r, residual plot logs}
 #| echo: false
 #| message: false
 set.seed(271)
@@ -204,7 +224,7 @@ resid_panel(lm_xydat, plots = c("resid"), smoother=TRUE)
 
 This one is more subtle (but underneath the hood, I can confirm that the assumption is not met). Unfortunately, these plots can often look a little "borderline", especially when the sample size is small.
 
-```{r}
+```{r, residual plot borderline}
 #| echo: false
 #| message: false
 set.seed(712)
@@ -217,7 +237,7 @@ resid_panel(lm_xydat, plots = c("resid"), smoother=TRUE)
 
 Note that the following is **not** a concern - this particular type of pattern simply indicates that your model only contains categorical predictors.
 
-```{r}
+```{r, residual plot categorical predictor}
 #| echo: false
 #| message: false
 set.seed(271)
@@ -257,13 +277,13 @@ In R, the easiest way to fit a linear model is using the `lm` function.
 
 To demo it briefly, we'll test it out on the inbuilt `iris` dataset.
 
-```{r}
+```{r, view iris dataset/variables}
 head(iris)
 ```
 
 We use the
 
-```{r}
+```{r, fit two predictor iris model}
 lm_iris <- lm(Sepal.Length ~ Sepal.Width + Species, data = iris)
 
 summary(lm_iris)

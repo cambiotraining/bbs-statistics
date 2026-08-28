@@ -13,11 +13,11 @@ Note that we use tabsets to provide instructions for all three major operating s
 
 ## Data
 
-The data used in these materials is provided as a zip file. 
+The data and any additional resources (e.g., scripts) used in these materials is provided as a zip file. 
 Download and unzip the folder to your Desktop to follow along with the materials.
 
 <!-- Note for Training Developers: add the link to 'href' -->
-<a href="">
+<a href=""https://github.com/cambiotraining/bbs-statistics/tree/main/materials/data_scripts/data_scripts.zip"">
   <button class="btn"><i class="fa fa-download"></i> Download</button>
 </a>
 

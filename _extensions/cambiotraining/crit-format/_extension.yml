@@ -12,4 +12,3 @@ contributes:
       code-link: true
       code-copy: true
       lightbox: true
-      embed-resources: false
